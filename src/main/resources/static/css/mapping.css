@@ -1,0 +1,88 @@
+
+	.mapping_form{
+		float: left;
+	}
+	.mapping_form img.camera{
+	    text-align: center;
+	    width: 97px;
+	    height: 97px;
+	    cursor: pointer;
+	}
+	.mapping_form img.none{
+	    text-align: center;
+	    width: 100px;
+	    height: 100px;
+	    cursor: pointer;
+	}
+	.server_img{
+		cursor: pointer;
+	}
+	.cameras div{
+		display: inline-block;
+    	float: left;
+    	text-align: center;
+	}
+	.cameras img.delete{
+		width: 20px;
+	    height: 20px;
+	    z-index: 100;
+	    position: absolute;
+	    margin: -14px 40px;
+	    display: none;
+	    cursor: pointer;
+	}
+	.edit{
+		width: 20px;
+	    height: 20px;
+	    cursor: pointer;
+	}
+	.cameras span{
+		margin-top: 5px;
+    	display: inline-block;
+    	width: 97px;
+	    text-overflow: ellipsis;
+	    overflow: hidden;
+	    white-space: nowrap;
+	}
+	.pagenum{
+	    display: inline-block;
+	    height: 30px;
+	    line-height: 30px;
+	}
+	.server-add {
+	    width: 50px;
+	    height: 50px;
+	    cursor: pointer;
+	    border: 1px darkgray dashed;
+	    line-height: 48px;
+	    display: inline-block;
+	    border-radius: 5px;
+	    text-align: center;
+	    
+    }    
+    .serverWord{
+	    margin-left:12px;
+	    margin-top: 10px;
+	    font-size:19px;
+	    }
+	.server-add {
+	    width: 50px;
+	    height: 50px;
+	    cursor: pointer;
+	    border: 1px darkgray dashed;
+	    line-height: 48px;
+	    display: inline-block;
+	    border-radius: 5px;
+	    text-align: center;
+	    margin-top:22px;
+	    margin-left:10px;
+	    margin-bottom:10px;
+    }    
+    .serverWord{
+	    margin-left:12px;
+	    margin-top: 10px;}    
+	    
+	.serverBox{
+	  	height:auto;
+	  }
+

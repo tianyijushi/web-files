@@ -1,0 +1,301 @@
+/*common*/
+.cl{
+	clear:both;
+}
+.line-height{
+	height:34px;
+	line-height:34px;
+}
+.pagefinder{
+	margin-top: 5px;
+}
+.tabelCenter th,.tabelCenter td {
+	text-align:center;
+}
+.col_2{
+	width: 21%;
+    float: left;
+    margin-right: 1%;
+}
+/* areaMonitor.ftl */
+  .areaMonitorUp{
+  	width: 70px;
+    height: 70px;
+    border: 1px solid #f6f6f6;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 66px;
+    box-shadow: 0 1px 3px;
+    cursor: pointer;
+    background-color: #f6f6f6;
+    margin-left: 10px;
+    display:inline-block;
+  }
+  #preview{
+  	width:70px;
+  	height:70px;
+  	display:none;
+  	border: 1px solid #f6f6f6;
+  	box-shadow: 0 1px 3px;
+  }
+  .searchCondition{
+	margin-top: 10px;
+    padding: 18px;
+    border-bottom: 2px solid #f4f4f4;
+    border-top:2px solid #f4f4f4;
+   
+  }
+  .searchCondition .tip{
+  	line-height:34px;
+  }
+  .left{
+  	float:left;
+    width:70%;
+    border-right:2px solid #f4f4f4;
+  }
+  #moreCondition{
+  	margin-top: 56px;
+  	display:none;
+  }
+  .widthper{
+     width:14%;
+  }
+  .seaechInput{
+	margin-top:8px;
+  }
+  .tablePic{
+	width: 75px;
+    height: 75px;
+    border-radius: 5px;
+  }
+  .timeStyle{
+  	background-color:#ffffff;
+  	border: 1px solid #337ab7;
+    width: 102px;
+    font-size: 11px;
+    color: #337ab7;
+    margin: 5px auto;
+    text-align: left;
+  }
+  .timeWord{
+  	display: inline-block;
+    background-color: #337ab7;
+    color: #fff;
+    width:50%;
+    text-align: center;
+  }
+  .timeago{
+  	display: inline-block;
+  	width:50%;
+  	text-align: center;
+  }
+  .pic-center td{
+   	text-align: center;
+  }
+  .tableShow{
+  	margin-top: 10px;
+  }
+  
+  #table-show tr:hover{
+    background-color:#d2e9ff; 
+  }
+  .right{
+  	/* height:575px; */
+  	/* overflow-y: auto; */
+  	width: 30%;
+    float: left;
+  }
+  .fl{
+  	float:left;
+  	margin-right:5px;
+  }
+.morePic{
+    border-left: 2px solid #ddd;
+    float: left;
+    width: 83%;
+    padding: 25px 5px;
+}
+.rightList{
+  	float: left;
+    width: 50px;
+} 
+
+/* areaAlert.ftl */
+.eventWord{
+	margin-left: 10px;
+    float: left;
+    width: 73%;
+}
+
+.linePoint{
+	margin-top: 11px;
+    margin-bottom: 10px;
+    padding-top: 3px;
+    border-top: 2px solid #f4f4f4;
+}
+
+.areaAlertUp{
+	width:250px;
+}
+.small, .big{
+    padding: 5px;
+    margin-left: 92%;
+}
+
+/*searchedPic  */
+.areaSearchUp{
+	width: 70px;
+    height: 70px;
+    border: 1px solid #f6f6f6;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 66px;
+    box-shadow: 0 1px 3px;
+    cursor: pointer;
+    background-color: #f6f6f6;
+    margin-left: 7px;
+    display:inline-block;
+}
+
+.searched{
+	width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    border: 2px solid red;
+    box-shadow: 0 1px 2px red;
+}
+.col_1{
+	float: left;
+    width: 10%;
+    margin-right: 8%;
+}
+
+.col_3{
+	float: left;
+    width: 60%;
+}
+.col_4{
+	width: 10%;
+}
+
+.trailSearch{
+	position: relative;
+	margin-bottom: 38px;
+}
+
+.buttonTip{
+	position: absolute;
+    left: 2%;
+    top: 18px;
+}
+.trailMap{
+	width: 100%;
+    border: 1px solid #ccc;
+}
+/* card.ftl */
+.cardTime{
+    margin-bottom: 10px;
+    height: 58px;
+    padding-top: 22px;
+}
+#uploadImge{
+	width:70px;
+	height:70px;
+	margin-top:-10px;
+	display:none;
+	padding-top: 10px;
+}
+
+.cardPic{
+	text-align: center;
+	height: 115px;
+}
+
+.card_col_1{
+	width:80%;
+	float:left;
+}
+.card_col_5{
+	width:20%;
+	float:left;
+}
+
+.card_col_2{
+	width:40%;
+	float:left;
+	margin-right:1%;
+}
+.card_col_3{
+	width:30%;
+	float:left;
+}
+.card_col_4{
+	width:15%;
+	float:left;
+	margin-left:3%;
+	height: 34px;
+    line-height: 34px;
+}
+.card_col_0{
+	float: left;
+    width: 26%;
+}
+.wid{
+	width:70%;
+}
+.searchConditionHide{
+	height:34px;
+}
+
+/* picture.ftl */
+.picture_col_5{
+	float:left;
+	width:50%;
+}
+
+/* map.ftl */
+.mapView{
+	margin-left:0px;
+}
+.mapViewImg{
+	width: 98%;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 1px #ddd;
+}
+.fetchpic{
+	display: inline-block;
+    float: left;
+    margin: 2px 1%;    
+    width: 100px;
+}
+.fetchpic_1{
+	display: inline-block;
+    float: left;
+    margin: 2px 4px;    
+    width: 100px;
+}
+.fetchpics{
+	overflow: hidden;
+    width: 100%;
+    height: 113px;
+	display: block; 
+}
+.fetchpics_1{
+	overflow: hidden;
+    width: 100%;
+    min-height: 113px;
+	display: block;
+}
+.static-map {
+	position: fixed;
+    bottom: 0px;
+    right: 5px;
+    z-index: 9999;
+    width:25%;
+}
+.greenborder{
+	border: 1px solid #07a007;
+}
+.redborder{
+	border: 1px solid #f00;
+}

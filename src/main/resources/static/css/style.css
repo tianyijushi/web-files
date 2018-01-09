@@ -1,0 +1,57 @@
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    background-color: #007d3b;
+    border-color: #007d3b;
+}
+.pagination > li> a {
+    display: inline;
+    cursor: pointer;
+}
+
+
+.loading_1 {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+ .mask{
+      background: #000;
+	  filter: alpha(opacity=50); /* IE的透明度 */
+	  opacity: 0.5; /* 透明度 */
+	  display: none;
+	  position: absolute;
+	  top: 0px;
+	  left: 0px;
+	  width: 100%;
+	  height: 100%;
+	  z-index: 100; /* 此处的图层要大于页面 */
+	  display:none;
+	  _background-color:#a0a0a0; /* 解决IE6的不透明问题 */
+    } 
+    .loading{
+      width:100px; 
+      height:100px; 
+      z-index:101; 
+      display:block; 
+      position:absolute; 
+      left:55%; 
+      top:15%;
+    }
+    
+/* autocomplete.js */
+  .ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  * html .ui-autocomplete {
+    height: 100px;
+  }
+
+.navbar-nav .active{
+	background-color: #444;
+}
+
