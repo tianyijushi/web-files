@@ -15,6 +15,8 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+import org.aspectj.weaver.NewFieldTypeMunger;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +28,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tunicorn.common.entity.AjaxResponse;
 import com.tunicorn.dface.Constant;
+import com.tunicorn.dface.text.files2;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -38,7 +41,7 @@ import net.sf.json.JSONObject;
 @EnableAutoConfiguration
 @RequestMapping("/files")
 public class FilesController extends BaseController {
-
+	private static Logger logger = Logger.getLogger(FilesController.class);
 	/**
 	 * @auther weixiaokai
 	 * @date 2017年12月28日 下午12:05:20
@@ -223,5 +226,52 @@ public class FilesController extends BaseController {
 			out.close();
 			ips.close();
 		}
+	}
+	
+	@RequestMapping(value = "/moveFiles", method = RequestMethod.POST)
+	@ResponseBody
+	public AjaxResponse moveFiles(HttpServletRequest request, @RequestBody String requestJson) {
+		String endPath = request.getSession().getAttribute("endPath")==null?Constant.ROOT_FILE_ENDPATH:request.getSession().getAttribute("endPath").toString();//移动的目标路径
+        if (endPath.isEmpty()) {
+			endPath = Constant.ROOT_FILE_ENDPATH;
+		}
+		JSONObject jsonObject = JSONObject.fromObject(requestJson);
+		JSONArray jsonArray = jsonObject.getJSONArray("paths");
+		for (Object json : jsonArray) {
+			String path = null;
+			try {
+				path = URLDecoder.decode(((JSONObject) json).getString("path"),"UTF-8");
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				AjaxResponse.toFailure(1, "该文件已经被转移");
+			}
+			File file = new File(path);
+			file.getName();
+			if(file.renameTo(new File(endPath+file.getName()))){
+				logger.info("文件移动成功！从"+path+"移动到"+endPath+file.getName());
+			}else{
+				logger.info("文件移动失败！原地址"+path);
+				//AjaxResponse.toSuccess("转移失败");
+			}
+		}
+		return AjaxResponse.toSuccess("移动成功");
+	}
+	
+	@RequestMapping(value = "/setPath", method = RequestMethod.POST)
+	@ResponseBody
+	public AjaxResponse setPath(HttpServletRequest request, @RequestBody String requestJson) {
+		
+		JSONObject jsonObject = JSONObject.fromObject(requestJson);
+		String  endPath = jsonObject.getString("endPath");
+		File file = new File(endPath);
+		if (!file.exists()) {
+			if (!file.mkdirs()) {//创建文件夹,true成功,false失败
+				return AjaxResponse.toFailure(1, "目录创建失败");
+			}
+		}
+		request.getSession().setAttribute("endPath", file.getPath()+file.separator);
+		logger.info("文件路径设置为:"+file.getPath());
+		return AjaxResponse.toSuccess("移动成功");
 	}
 }

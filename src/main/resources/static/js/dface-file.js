@@ -9,13 +9,13 @@ var Click=new Array();
 				for(i=iMin;i<=iMax;i++){
 					if($("ul.imglist li:eq("+i+")").attr('choosed')==0){
 						$("ul.imglist li:eq("+i+")").addClass("red")  //
-						$($(this).find("input").get(0)).remove();
-						if($(this).attr("class").indexOf("red")>=0){
-				    		delPath = $($(this).find("span").get(0)).html();
+						$($("ul.imglist li:eq("+i+")").find("input").get(0)).remove();
+						if($("ul.imglist li:eq("+i+")").attr("class").indexOf("red")>=0){
+				    		delPath = $($("ul.imglist li:eq("+i+")").find("span").get(0)).html();
 		        			dl = '<input type="hidden" name="delefile" value="'+delPath+'"/>';
-		        			$(this).append(dl);
+		        			$("ul.imglist li:eq("+i+")").append(dl);
 				    	}else{
-				    		$($(this).find("input").get(0)).remove();
+				    		$($("ul.imglist li:eq("+i+")").find("input").get(0)).remove();
 				    	}
 					}
 				}
@@ -33,11 +33,12 @@ var Click=new Array();
 			}
 		});
 	}
-document.onselectstrat=function(event){   //ҜĢτؖѻѡא
+document.onselectstrat=function(event){   א
 	  event = window.event||event;
 	  event.returnValue = false;
 	}
 $(function(){
+	console.log(222);
 		shift_select();
 //	    $('ul.imglist li').click(function(){
 //	    	if($(this).attr('choosed')==0){//判断是否可选
@@ -68,14 +69,14 @@ $(function(){
     	var formData = new FormData();
 		formData.requestId = new Date().getTime();
 		formData.paths = paths;
-		tunicorn.utils.post("/files/files/deleteFiles", formData, function(err, result){
+		tunicorn.utils.post("/files/files/moveFiles", formData, function(err, result){
         	if(err){
 				noty({text: "服务器异常!", layout: "topCenter", type: "error", timeout: 2000});
 				return;
 			}
 			if(result.success){
 				var list_folders = result.data;
-				noty({text: "删除成功！", layout: "topCenter", type: "warning", timeout: 2000});
+				noty({text: "移动成功！", layout: "topCenter", type: "warning", timeout: 2000});
 				getFiles($("#parentPath").val());
 			}else{
 				noty({text: result.errorMessage, layout: "topCenter", type: "error", timeout: 2000});

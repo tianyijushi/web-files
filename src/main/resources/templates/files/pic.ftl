@@ -56,7 +56,7 @@ ul.imglist li span{ display:block; width:100%;  background:#F6F6F6;white-space:n
 	</#if>
 	<#if m gt 0>
 	<div style="width:100%;height:100px;line-height:100px;vertical-align: middle;text-align:center;">
-		<button id="deleteButton" class="btn btn-warning" >批量删除</button>
+		<button id="deleteButton" class="btn btn-warning" >批量移动</button>
 		<button id="cancelButton" class="btn btn-warning" >取消选中</button>
 	</div>
 	</#if>

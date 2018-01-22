@@ -96,11 +96,10 @@
 	<profiles>
 	    <profile>
 	        <id>dev</id>
+	        
 	        <properties>
 	            <env>dev</env>
-	            <root.file.path>D:\\mnt\\storage4\\dface</root.file.path>
 	        </properties>
-	        
 	    </profile>
 	    <profile>
 	        <id>pro</id>
@@ -109,16 +108,15 @@
 	        </activation>
 	        <properties>
 	            <env>pro</env>
-	            <root.file.path>/root/webserver/projects</root.file.path>
 	        </properties>
 	        
 	    </profile>
 	</profiles>
 	
 	<build>
-		<!-- <filters>
+		<filters>
       		<filter>src/main/resources/${env}/filter.properties</filter>
-    	</filters> -->
+    	</filters>
     	
 		<resources>
 			<resource>
